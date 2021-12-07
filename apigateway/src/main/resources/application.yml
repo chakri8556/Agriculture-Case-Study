@@ -1,0 +1,27 @@
+ server:
+  port: 8999
+
+ eureka:
+  instance:
+    hostname: localhost
+
+
+ spring:
+  application:
+   name: api-gateway
+  cloud:
+   gateway:
+     routes:
+      - id: user_Farmer
+        uri: http://localhost:9001
+        predicates:
+        - Path=/farmer/login/**
+      - id: user_Dealer
+        uri: http://localhost:9002
+        predicates:
+        - Path=/dealer/login/**
+      - id: user_Admin
+        uri: http://localhost:9003
+        predicates:
+        - Path=/admin/login/**
+
