@@ -1,7 +1,6 @@
 package com.Dealer;
 
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value= "/dealer")
 public class HelloWorldController {
-    @RequestMapping(value= "/login/d" ,method = RequestMethod.GET)
+    @RequestMapping(value= "/d" ,method = RequestMethod.GET)
     public String userLoginValidation() {
         return "Hello From Dealer MicroService!";
     }

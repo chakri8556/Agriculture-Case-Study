@@ -10,7 +10,6 @@ import user_Farmer.repository.FarmerRepository;
 @SpringBootApplication
 public class UserFarmerApplication implements CommandLineRunner {
 	@Autowired
-
 	private FarmerRepository FR;
 	public static void main(String[] args) {
 		SpringApplication.run(UserFarmerApplication.class, args);
@@ -19,7 +18,8 @@ public class UserFarmerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		if(FR.findAll().isEmpty()) {
-			FR.save(new Farmer(1,"Dummy",6300625,"chak@gmail.com"));
+			FR.save(new Farmer(1,"FirstFarmer",55555,"F1@gmail.com"));
+			FR.save(new Farmer(2,"SecondFarmer", 88776,"F2@gmail.com"));
 		}
 	}
 }

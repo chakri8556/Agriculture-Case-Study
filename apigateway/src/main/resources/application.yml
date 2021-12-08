@@ -15,13 +15,13 @@
       - id: user_Farmer
         uri: http://localhost:9001
         predicates:
-        - Path=/farmer/login/**
+        - Path=/farmer/**
       - id: user_Dealer
         uri: http://localhost:9002
         predicates:
-        - Path=/dealer/login/**
+        - Path=/dealer/**
       - id: user_Admin
         uri: http://localhost:9003
         predicates:
-        - Path=/admin/login/**
+        - Path=/admin/**
 

@@ -17,7 +17,7 @@ public class FarmerResource {
     @Autowired
     private FarmerRepository farmerRepository;
 
-    @RequestMapping(value = "/login/f" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/f" ,method = RequestMethod.GET)
     public String userLoginValidation() {
         return "Hello From Farmer MicroService!";
     }
@@ -30,9 +30,9 @@ public class FarmerResource {
     public List<Farmer> getFarmer() {
         return farmerRepository.findAll();
     }
-    @GetMapping("/findAllfarmer/{id}")
-    public Optional<Farmer> getFarmer(@PathVariable int farmerid) {
-        return farmerRepository.findById(farmerid);
+    @GetMapping("/findonefarmer/{id}")
+    public Farmer getFarmer(@PathVariable int id) {
+        return farmerRepository.findById(id).get();
     }
     @DeleteMapping("/delete/{id}") public String deleteBook(@PathVariable int id) {
         farmerRepository.deleteById(id);

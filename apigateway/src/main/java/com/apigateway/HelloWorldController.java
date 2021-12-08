@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api")
 public class HelloWorldController {
-    @RequestMapping(value = "/login/gateway",method = RequestMethod.GET)
+    @RequestMapping(value = "/gateway",method = RequestMethod.GET)
     public String userLoginValidation() {
         return "Hello From Api-gateway MicroService!";
     }

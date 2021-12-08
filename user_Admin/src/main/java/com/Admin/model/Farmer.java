@@ -1,12 +1,7 @@
-package user_Farmer.model;
+package com.Admin.model;
 
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "DETAILS")
 public class Farmer {
-    @Id
+
     private int farmerid;
     private String farmername;
     private long phoneno;
