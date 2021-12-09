@@ -24,4 +24,7 @@
         uri: http://localhost:9003
         predicates:
         - Path=/admin/**
-
+      - id: Crop_List
+        uri: http://localhost:9004
+        predicates:
+        - Path=/crop/**
