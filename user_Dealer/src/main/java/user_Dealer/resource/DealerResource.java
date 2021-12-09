@@ -31,7 +31,7 @@ public class DealerResource {
     public Dealer getDealer(@PathVariable int id){
         return dealerRepository.findById(id).get();
     }
-    @DeleteMapping("/delete{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteBook(@PathVariable int id){
         dealerRepository.deleteById(id);
         return "Book deleted with id: " + id;

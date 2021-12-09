@@ -20,14 +20,14 @@ public class AdminResource {
     public String userLoginValidation(){
         return "Hello From Admin MicroService!";
     }
-    @RequestMapping(value = "/{userid}")
+    @RequestMapping(value = "/getfarmer/{userid}")
     public Farmer getCatalog(@PathVariable int userid){
         Farmer FarmerDetails =  restTemplate.getForObject("http://localhost:9001/farmer/findonefarmer/"+userid, Farmer.class);
         return FarmerDetails;
     }
-    @RequestMapping(value = "/{userid}")
-    public Dealer getCatalog(@PathVariable int userid){
-        Dealer DealerDetails = restTemplate.getForObject("http://localhost:9002/dealer/findAlldealer/"+userid, Dealer.class);
+    @RequestMapping(value = "/dealer/{userid}")
+    public Dealer getDealer(@PathVariable int userid){
+        Dealer DealerDetails = restTemplate.getForObject("http://localhost:9002/dealer/findonedealer/"+userid, Dealer.class);
         return DealerDetails;
     }
 
