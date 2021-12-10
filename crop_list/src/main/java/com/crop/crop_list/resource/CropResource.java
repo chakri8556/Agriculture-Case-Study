@@ -5,6 +5,7 @@ import com.crop.crop_list.model.Crop;
 import com.crop.crop_list.repository.CropRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ import java.util.List;
 public class CropResource {
     @Autowired
     private CropRepository cropRepository;
+    @Autowired
+    private RestTemplate restTemplate;
 
     @RequestMapping(value = "/c", method = RequestMethod.GET)
     public String userLoginValidation() {
@@ -37,10 +40,20 @@ public class CropResource {
         return cropRepository.findById(id).get();
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteBook(@PathVariable int id) {
-        cropRepository.deleteById(id);
-        return "Book deleted with id : " + id;
+    @DeleteMapping("/delete/{cropid}")
+    public String deleteBook(@PathVariable int cropid) {
+        cropRepository.deleteById(cropid);
+        return "Book deleted with id : " + cropid;
+    }
+    @PutMapping("/update/{id}")
+    public String getcrop1(@RequestBody Crop crop) {
+        cropRepository.save(crop);
+        return "Crop updated with id:" + crop.getCropid();
+    }
+    @PutMapping("/edit/{id}")
+    public String getcrop2(@RequestBody Crop crop) {
+        cropRepository.save(crop);
+        return "Crop edited with id:" + crop.getCropid();
     }
 }
 
