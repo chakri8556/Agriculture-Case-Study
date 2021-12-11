@@ -48,7 +48,7 @@ public class FarmerResource {
         return farmerRepository.findAll();
     }
 
-    @GetMapping("/findonefarmer/{id}")
+    @GetMapping("/findfarmer/{id}")
     public Farmer getFarmer1(@PathVariable int id) {
         return farmerRepository.findById(id).get();
     }
@@ -69,8 +69,23 @@ public class FarmerResource {
         farmerRepository.save(farmer);
         return "Farmer edited with id:" + farmer.getFarmerid();
     }
-
+    @PutMapping("/view/{id}")
+    public String getFarmer4(@RequestBody Farmer farmer){
+        farmerRepository.save(farmer);
+        return "Farmer is viewing his profile with id:" + farmer.getFarmerid();
+    }
+    @PutMapping("/activate/{id}")
+    public String getFarmer5(@RequestBody Farmer farmer) {
+        farmerRepository.save(farmer);
+        return "Farmer activated with id:" + farmer.getFarmerid();
+    }
+    @PutMapping("/inactivate/{id}")
+    public String getFarmer6(@RequestBody Farmer farmer) {
+        farmerRepository.save(farmer);
+        return "Farmer inactivated with id:" + farmer.getFarmerid();
+    }
 }
+
 
 
 

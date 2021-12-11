@@ -48,4 +48,19 @@ public class DealerResource {
         dealerRepository.save(dealer);
         return "Dealer edited with id:" + dealer.getDealerid();
     }
+    @PutMapping("/view/{id}")
+    public String getDealer4(@RequestBody Dealer dealer) {
+        dealerRepository.save(dealer);
+        return "Dealer is viewing his profile with id:" + dealer.getDealerid();
+    }
+    @PutMapping("/activate/{id}")
+    public String getDealer5(@RequestBody Dealer dealer) {
+        dealerRepository.save(dealer);
+        return "Dealer activated with id:" + dealer.getDealerid();
+    }
+    @PutMapping("/inactivate/{id}")
+    public String getDealer6(@RequestBody Dealer dealer) {
+        dealerRepository.save(dealer);
+        return "Dealer inactivated with id:" + dealer.getDealerid();
+    }
 }

@@ -51,12 +51,30 @@ public class AdminResource {
     public List<Dealer> dealerdetails() {
         return Arrays.asList(restTemplate.getForObject("http://localhost:9002/dealer/findAlldealer", Dealer[].class));
     }
+
     @GetMapping(value = "/findAllcrop")
-    public List<Crop> cropdetails(){
+    public List<Crop> cropdetails() {
         return Arrays.asList(restTemplate.getForObject("http://localhost:9004/crop/findAllcrop", Crop[].class));
-
-
     }
+
+    @DeleteMapping("/deletefarmer/{farmerid}")
+    public Boolean deleteFarmerById(@PathVariable String farmerid) {
+        restTemplate.delete("http://localhost:9001/farmer/delete/" + farmerid);
+        return true;
+    }
+
+    @DeleteMapping("/deletedealer/{dealerid}")
+    public Boolean deleteDealerById(@PathVariable String dealerid) {
+        restTemplate.delete("http://localhost:9002/dealer/delete/" + dealerid);
+        return true;
+    }
+
+    @DeleteMapping("/deletecrop/{cropid}")
+    public Boolean deleteCropById(@PathVariable String cropid) {
+        restTemplate.delete("http://localhost:9004/crop/delete/" + cropid);
+        return true;
+    }
+
 
 }
 
