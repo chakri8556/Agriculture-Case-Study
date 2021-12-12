@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class UserFarmerApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void loadContext() {
+
 	}
 
 }

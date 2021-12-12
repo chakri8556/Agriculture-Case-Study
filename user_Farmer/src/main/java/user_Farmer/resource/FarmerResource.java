@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import user_Farmer.model.Farmer;
 import user_Farmer.repository.FarmerRepository;
 
+
 import java.util.List;
 
 @EnableEurekaClient
@@ -48,7 +49,7 @@ public class FarmerResource {
         return farmerRepository.findAll();
     }
 
-    @GetMapping("/findfarmer/{id}")
+    @GetMapping("/findfarmer/{farmerid}")
     public Farmer getFarmer1(@PathVariable int id) {
         return farmerRepository.findById(id).get();
     }
@@ -84,7 +85,9 @@ public class FarmerResource {
         farmerRepository.save(farmer);
         return "Farmer inactivated with id:" + farmer.getFarmerid();
     }
+
 }
+
 
 
 
