@@ -1,4 +1,5 @@
-package com.Admin.model;
+package user_Admin.model;
+
 
 public class Farmer {
 
@@ -6,7 +7,17 @@ public class Farmer {
     private String farmername;
     private long phoneno;
     private String farmermailid;
-    public Farmer() { }
+    private String farmerlocation;
+    public Farmer(){ }
+
+
+    public Farmer(int farmerid, String farmername, long phoneno, String farmermailid, String farmerlocation) {
+        this.farmerid = farmerid;
+        this.farmername = farmername;
+        this.phoneno = phoneno;
+        this.farmermailid = farmermailid;
+        this.farmerlocation = farmerlocation;
+    }
 
     public int getFarmerid() {
         return farmerid;
@@ -40,11 +51,12 @@ public class Farmer {
         this.farmermailid = farmermailid;
     }
 
-    public Farmer(int farmerid, String farmername, long phoneno, String farmermailid) {
-        this.farmerid = farmerid;
-        this.farmername = farmername;
-        this.phoneno = phoneno;
-        this.farmermailid = farmermailid;
+    public String getFarmerlocation() {
+        return farmerlocation;
+    }
+
+    public void setFarmerlocation(String farmerlocation) {
+        this.farmerlocation = farmerlocation;
     }
 
     @Override
@@ -54,8 +66,13 @@ public class Farmer {
                 ", farmername='" + farmername + '\'' +
                 ", phoneno=" + phoneno +
                 ", farmermailid='" + farmermailid + '\'' +
+                ", farmerlocation='" + farmerlocation + '\'' +
                 '}';
     }
-}
+
+
+    }
+
+
 
 

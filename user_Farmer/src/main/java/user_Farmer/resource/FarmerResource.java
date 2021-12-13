@@ -1,10 +1,5 @@
 package user_Farmer.resource;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.*;
@@ -30,14 +25,6 @@ public class FarmerResource {
         return "Hello From Farmer MicroService!";
     }
 
-    @Operation(summary = "Add farmer", description = "Get a list of farmers", tags = "Get")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Added the Farmer",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Farmer.class))}),
-            @ApiResponse(responseCode = "404", description = "Farmer not Added" +
-                    "",
-                    content = @Content)})
     @PostMapping("/addfarmer")
     public String saveFarmer(@RequestBody Farmer farmer) {
         farmerRepository.save(farmer);
@@ -49,15 +36,23 @@ public class FarmerResource {
         return farmerRepository.findAll();
     }
 
-    @GetMapping("/findfarmer/{farmerid}")
-    public Farmer getFarmer1(@PathVariable int id) {
-        return farmerRepository.findById(id).get();
+    @GetMapping("/findfarmer/{byid}")
+    public Farmer getFarmer1(@PathVariable int byid) {
+        return farmerRepository.findById(byid).get();
+    }
+    @GetMapping(value = "/byname/{farmername}")
+    public List<Farmer> getFarmer(@PathVariable String farmername){
+        return farmerRepository.findByFarmername(farmername);
+    }
+    @GetMapping(value = "/bylocation/{farmername}")
+    public List<Farmer> getFarmerlocation(@PathVariable String farmername){
+        return farmerRepository.findByFarmername(farmername);
     }
 
-    @DeleteMapping("/delete/{farmerid}")
-    public String deleteBook(@PathVariable int farmerid) {
-        farmerRepository.deleteById(farmerid);
-        return "Book deleted with id : " + farmerid;
+    @DeleteMapping("/delete/{byid}")
+    public String deleteBook(@PathVariable int byid) {
+        farmerRepository.deleteById(byid);
+        return "Book deleted with id : " + byid;
     }
 
     @PutMapping("/update/{id}")

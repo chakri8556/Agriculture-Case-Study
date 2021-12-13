@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface FarmerRepository extends MongoRepository<Farmer,Integer> {
 
-    List<Farmer> findByFarmername(String name);
 
+    List<Farmer> findByFarmername(String farmername);
 }

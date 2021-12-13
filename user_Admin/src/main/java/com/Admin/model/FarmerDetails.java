@@ -1,5 +1,7 @@
 package com.Admin.model;
 
+import user_Admin.model.Farmer;
+
 import java.util.List;
 
 public class FarmerDetails {

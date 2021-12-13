@@ -47,14 +47,25 @@ class FarmerResourceTest {
         String baseurl = "http://localhost:" + port + "/findfarmer/{farmerid}";
     }
     @Test
-    void givenupdatebyid_GetupdatebyidEndpoint_ShouldReturnfarmerupdatedwithid(){
+    void givenupdatebyid_PutupdatebyidEndpoint_ShouldReturnfarmerupdatedwithid(){
         String baseurl = "http://localhost:" + port + "/update/{id}";
     }
     @Test
-    void giveneditbyid_GeteditbyidEndpoint_ShouldReturnfarmereditedwithid(){
+    void giveneditbyid_PuteditbyidEndpoint_ShouldReturnfarmereditedwithid(){
         String baseurl = "http://localhost:" + port + "/edit/{id}";
     }
-
+    @Test
+    void givenviewbyid_PutviewbyEndpoint_ShouldReturnfarmerisviewinghisprofilewithid(){
+        String baseurl = "http://localhost: + port + /edit/{id}";
+    }
+    @Test
+    void giveninactivatebyid_PutinactivatebyidEndpoint_ShouldReturnfarmerinactivatedwithid(){
+        String baseurl = "http://localhost: + port + /inactivate/{id}";
+    }
+    @Test
+    void givenactivatebyid_PutactivatebyidEndpoint_ShouldReturnfarmeractivatedwithid(){
+        String baseurl = "http://localhost: + port + /activate/{id}";
+    }
 
 
 }

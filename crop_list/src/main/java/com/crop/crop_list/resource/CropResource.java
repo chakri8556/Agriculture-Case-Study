@@ -35,9 +35,9 @@ public class CropResource {
         return cropRepository.findAll();
     }
 
-    @GetMapping("/findonecrop/{id}")
-    public Crop getCrop(@PathVariable int id) {
-        return cropRepository.findById(id).get();
+    @GetMapping("/findcrop/{byid}")
+    public Crop getCrop(@PathVariable int byid) {
+        return cropRepository.findById(byid).get();
     }
 
     @DeleteMapping("/delete/{cropid}")
@@ -45,11 +45,13 @@ public class CropResource {
         cropRepository.deleteById(cropid);
         return "Book deleted with id : " + cropid;
     }
+
     @PutMapping("/update/{id}")
     public String getcrop1(@RequestBody Crop crop) {
         cropRepository.save(crop);
         return "Crop updated with id:" + crop.getCropid();
     }
+
     @PutMapping("/edit/{id}")
     public String getcrop2(@RequestBody Crop crop) {
         cropRepository.save(crop);

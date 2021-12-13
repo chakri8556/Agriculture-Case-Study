@@ -29,9 +29,13 @@ public class DealerResource {
     public List<Dealer> getDealer(){
         return dealerRepository.findAll();
     }
-    @GetMapping("/findonedealer/{id}")
-    public Dealer getDealer1(@PathVariable int id){
-        return dealerRepository.findById(id).get();
+    @GetMapping("/finddealer/{byid}")
+    public Dealer getDealer1(@PathVariable int byid){
+        return dealerRepository.findById(byid).get();
+    }
+    @GetMapping(value = "/byname/{dealername}")
+    public List<Dealer> getDealer(@PathVariable String dealername){
+        return dealerRepository.findBydealername(dealername);
     }
     @DeleteMapping("/delete/{dealerid}")
     public String delete(@PathVariable int dealerid){

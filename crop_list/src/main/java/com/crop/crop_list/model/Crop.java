@@ -3,7 +3,7 @@ package com.crop.crop_list.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Crop Details")
+@Document(collection = "CropDetails")
 public class Crop {
     @Id
     private int cropid;
