@@ -1,6 +1,7 @@
-package user_Dealer.model;
+package com.crop.crop_list.model;
 
 public class JwtResponse {
+
     String token;
 
     public JwtResponse(){
@@ -19,5 +20,4 @@ public class JwtResponse {
         this.token = token;
     }
 }
-
 

@@ -1,50 +1,44 @@
 package com.Admin.model;
 
 
-
-
 public class Dealer {
 
         private int dealerid;
         private String dealername;
         private long phoneno;
         private String dealermailid;
+    public Dealer() { }
+    public int getDealerid() {
+        return dealerid;
+    }
 
-        public Dealer() { }
+    public void setDealerid(int dealerid) {
+        this.dealerid = dealerid;
+    }
 
+    public String getDealername() {
+        return dealername;
+    }
 
-        public int getDealerid() {
-            return dealerid;
-        }
+    public void setDealername(String dealername) {
+        this.dealername = dealername;
+    }
 
-        public void setDealerid(int dealerid) {
-            this.dealerid = dealerid;
-        }
+    public long getPhoneno() {
+        return phoneno;
+    }
 
-        public String getDealername() {
-            return dealername;
-        }
+    public void setPhoneno(long phoneno) {
+        this.phoneno = phoneno;
+    }
 
-        public void setDealername(String dealername) {
-            this.dealername = dealername;
-        }
+    public String getDealermailid() {
+        return dealermailid;
+    }
 
-        public long getPhoneno() {
-            return phoneno;
-        }
-
-        public void setPhoneno(long phoneno) {
-            this.phoneno = phoneno;
-        }
-
-        public String getDealermailidmailid() {
-            return dealermailid;
-        }
-
-        public void setDealermailid(String dealermailid) {
-            this.dealermailid = dealermailid;
-        }
-
+    public void setDealermailid(String dealermailid) {
+        this.dealermailid = dealermailid;
+    }
         public Dealer(int dealerid, String dealername, long phoneno, String dealermailid) {
             this.dealerid = dealerid;
             this.dealername = dealername;
@@ -52,15 +46,16 @@ public class Dealer {
             this.dealermailid = dealermailid;
         }
 
-        @Override
-        public String toString() {
-            return "Dealer{" +
-                    "dealerid=" + dealerid +
-                    ", dealername=' " + dealername + '\'' +
-                    ", phoneno=" + phoneno +
-                    ", dealermailid=" + dealermailid + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Dealer{" +
+                "dealerid=" + dealerid +
+                ", dealername='" + dealername + '\'' +
+                ", phoneno=" + phoneno +
+                ", dealermailid='" + dealermailid + '\'' +
+                '}';
     }
+}
+
 
 

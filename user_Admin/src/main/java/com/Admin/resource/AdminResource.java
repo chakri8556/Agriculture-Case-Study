@@ -1,19 +1,19 @@
 package com.Admin.resource;
 
+
 import com.Admin.model.Crop;
 import com.Admin.model.Dealer;
-import user_Admin.model.Farmer;
+import com.Admin.model.Farmer;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-
 import java.util.Arrays;
 import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
-public class AdminResource {
+public class AdminResource{
     @Autowired
     private RestTemplate restTemplate;
     @RequestMapping(value = "/a", method = RequestMethod.GET)

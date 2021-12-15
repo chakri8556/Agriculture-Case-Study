@@ -1,11 +1,9 @@
-package user_Dealer.model;
+package com.crop.crop_list.model;
 
 public class JwtRequest {
     String username;
     String password;
-public JwtRequest(){
 
-}
     public JwtRequest(String username, String password) {
         this.username = username;
         this.password = password;
@@ -26,4 +24,20 @@ public JwtRequest(){
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "JwtRequest{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    public JwtRequest(){
+
+
+
+    }
 }
+
+

@@ -1,4 +1,5 @@
-package user_Admin.model;
+package com.Admin.model;
+
 
 
 public class Farmer {
@@ -69,10 +70,7 @@ public class Farmer {
                 ", farmerlocation='" + farmerlocation + '\'' +
                 '}';
     }
-
-
-    }
-
+}
 
 
 

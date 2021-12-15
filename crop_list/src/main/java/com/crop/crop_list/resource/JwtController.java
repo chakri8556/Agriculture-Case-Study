@@ -1,5 +1,9 @@
-package user_Dealer.resource;
+package com.crop.crop_list.resource;
 
+import com.crop.crop_list.Helper.JwtUtil;
+import com.crop.crop_list.Services.UserDetailsService;
+import com.crop.crop_list.model.JwtRequest;
+import com.crop.crop_list.model.JwtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,10 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import user_Dealer.Helper.JwtUtil;
-import user_Dealer.Services.CustomUserDetailsService;
-import user_Dealer.model.JwtRequest;
-import user_Dealer.model.JwtResponse;
 
 @RestController
 public class JwtController {
@@ -22,7 +22,7 @@ public class JwtController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    private UserDetailsService UserDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -47,7 +47,7 @@ public class JwtController {
 
         }
 
-        UserDetails userDetails = this.customUserDetailsService.loadUserByUsername(jwtRequest.getUsername());
+        UserDetails userDetails = this.UserDetailsService.loadUserByUsername(jwtRequest.getUsername());
 
         String token = this.jwtUtil.generateToken(userDetails);
         System.out.println("JWT "+token);
@@ -56,6 +56,5 @@ public class JwtController {
 
     }
 }
-
 
 

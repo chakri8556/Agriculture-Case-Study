@@ -1,6 +1,7 @@
 package com.Admin.model;
 
 public class Crop {
+
     private int cropid;
     private String cropname;
     private double cropprice;
@@ -12,6 +13,7 @@ public class Crop {
         this.cropprice = cropprice;
         this.quantity = quantity;
     }
+
     public int getCropid() {
         return cropid;
     }
