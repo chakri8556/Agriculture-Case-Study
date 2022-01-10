@@ -6,9 +6,12 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { DealerComponent } from './components/dealer/dealer.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { SFarmerComponent } from './sfarmer/sfarmer.component';
+import { SDealerComponent } from './sdealer/sdealer.component';
 import { FarmerComponent } from './components/farmer/farmer.component';
+import { DealerComponent } from './components/dealer/dealer.component';
+import { CropComponent } from './components/crop/crop.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,9 +19,12 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'signup', component: SignUpComponent },
+  { path: 'sfarmer', component: SFarmerComponent },
+  { path: 'sdealer', component: SDealerComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'farmer', component: FarmerComponent },
   { path: 'dealer', component: DealerComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'crops', component: CropComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -1,36 +1,32 @@
 <div class="border">
   <button class="btn btn-md btn-outline-primary">
-    <i class="fa fa-user"></i>New Farmer
+    <i class="fa fa-user"></i>New Crop
   </button>
 </div>
 <div class="container">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Farmerid</th>
-        <th>Farmername</th>
-        <th>Phoneno</th>
-        <th>Farmermailid</th>
-        <th>Farmerlocation</th>
+        <th>Cropid</th>
+        <th>Cropname</th>
+        <th>CropPrice</th>
+        <th>Quantity</th>
         <th>Operations</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let farmer of farmers">
+      <tr *ngFor="let crop of crops">
         <td>
-          <span>{{ farmer.farmerid }}</span>
+          <span>{{ crop.cropid }}</span>
         </td>
         <td>
-          <span>{{ farmer.farmername }}</span>
+          <span>{{ crop.cropname }}</span>
         </td>
         <td>
-          <span>{{ farmer.phoneno }}</span>
+          <span>{{ crop.cropprice }}</span>
         </td>
         <td>
-          <span>{{ farmer.farmermailid }}</span>
-        </td>
-        <td>
-          <span>{{ farmer.farmerlocation }}</span>
+          <span>{{ crop.quantity }}</span>
         </td>
         <td>
           <button class="btn btn-sm btn-info">

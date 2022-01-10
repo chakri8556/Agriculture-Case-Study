@@ -16,6 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DealerComponent } from './components/dealer/dealer.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { FarmerComponent } from './components/farmer/farmer.component';
+import { CropComponent } from './components/crop/crop.component';
+import { SFarmerComponent } from './sfarmer/sfarmer.component';
+import { SDealerComponent } from './sdealer/sdealer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { FarmerComponent } from './components/farmer/farmer.component';
     DealerComponent,
     AdminComponent,
     FarmerComponent,
+    CropComponent,
+    SFarmerComponent,
+    SDealerComponent,
   ],
   imports: [
     BrowserModule,
