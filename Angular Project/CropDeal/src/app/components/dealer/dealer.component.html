@@ -1,5 +1,5 @@
 <div class="border">
-  <button class="btn btn-md btn-outline-primary">
+  <button (click)="open(content)" class="btn btn-md btn-outline-primary">
     <i class="fa fa-user"></i>New Dealer
   </button>
 </div>
@@ -43,5 +43,68 @@
     </tbody>
   </table>
 </div>
-
 }
+<!--Adding New Dealer-->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Dealer</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <div class="form-group">
+        <label for="dealerid">Dealerid</label>
+        <div class="input-group">
+          <input id="dealerid" name="dealerid" class="form-control" ngModel />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dealername">Dealername</label>
+        <div class="input-group">
+          <input
+            id="dealername"
+            name="dealername"
+            class="form-control"
+            ngModel
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneno">Phoneno</label>
+        <div class="input-group">
+          <input id="phoneno" name="phoneno" class="form-control" ngModel />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dealermailid">Dealermailid</label>
+        <div class="input-group">
+          <input
+            id="dealermailid"
+            name="dealermailid"
+            class="form-control"
+            ngModel
+          />
+        </div>
+      </div>
+      <div class="border text-center">
+        <button data-dismiss="modal" class="btn btn-info">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Cancel
+    </button>
+  </div>
+</ng-template>

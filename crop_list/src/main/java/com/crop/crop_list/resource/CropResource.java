@@ -4,12 +4,13 @@ package com.crop.crop_list.resource;
 import com.crop.crop_list.model.Crop;
 import com.crop.crop_list.repository.CropRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-
-
+@EnableEurekaClient
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/crop")
 public class CropResource {

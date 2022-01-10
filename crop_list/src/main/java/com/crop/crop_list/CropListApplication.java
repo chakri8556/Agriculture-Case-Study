@@ -8,7 +8,6 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class CropListApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(CropListApplication.class, args);
 	}
