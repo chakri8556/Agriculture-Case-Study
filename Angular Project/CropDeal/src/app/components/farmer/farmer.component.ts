@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 export class Farmer {
   constructor(
     public farmerid: any,
@@ -18,10 +19,23 @@ export class Farmer {
 })
 export class FarmerComponent implements OnInit {
   closeResult!: String;
-  constructor(private http: HttpClient, private modalService: NgbModal) {}
+  editForm!: FormGroup;
+  deleteId: any;
+  constructor(
+    private http: HttpClient,
+    private modalService: NgbModal,
+    private Formbuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.getFarmers();
+    this.editForm = this.Formbuilder.group({
+      farmerid: [''],
+      farmername: [''],
+      phoneno: [''],
+      farmermailid: [''],
+      farmerlocation: [''],
+    });
   }
 
   farmers: Array<Farmer> = [];
@@ -77,5 +91,43 @@ export class FarmerComponent implements OnInit {
     document
       .getElementById('flocation')
       ?.setAttribute('value', farmer.farmerlocation);
+  }
+  openEdit(targetModal: any, farmer: Farmer) {
+    this.modalService.open(targetModal, {
+      centered: true,
+      backdrop: 'static',
+      size: 'lg',
+    });
+    this.editForm.patchValue({
+      farmerid: farmer.farmerid,
+      farmername: farmer.farmername,
+      phoneno: farmer.phoneno,
+      farmermailid: farmer.farmermailid,
+      farmerlocation: farmer.farmerlocation,
+    });
+  }
+  onSave() {
+    const editURL =
+      'http://localhost:9001/farmer/' + '/edit' + this.editForm.value.id;
+    console.log(this.editForm.value);
+    this.http.put(editURL, this.editForm.value).subscribe((results) => {
+      this.ngOnInit();
+      this.modalService.dismissAll();
+    });
+  }
+  openDelete(targetModal: any, farmer: Farmer) {
+    const deleteId = farmer.farmerid;
+    this.modalService.open(targetModal, {
+      backdrop: 'static',
+      size: 'lg',
+    });
+  }
+  onDelete() {
+    const deleteURL =
+      'http://localhost:9001/farmer/' + '/delete' + this.deleteId;
+    this.http.delete(deleteURL).subscribe((results) => {
+      this.ngOnInit();
+      this.modalService.dismissAll();
+    });
   }
 }
