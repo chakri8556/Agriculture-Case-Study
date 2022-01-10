@@ -4,9 +4,9 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 export class Farmer {
   constructor(
-    public farmerid: number,
+    public farmerid: any,
     public farmername: string,
-    public phoneno: number,
+    public phoneno: any,
     public farmermailid: string,
     public farmerlocation: string
   ) {}
@@ -61,5 +61,21 @@ export class FarmerComponent implements OnInit {
       this.ngOnInit(); //reload the table
     });
     this.modalService.dismissAll(); //dismiss the modal
+  }
+  openDetails(targetModal: any, farmer: Farmer) {
+    this.modalService.open(targetModal, {
+      centered: true,
+      backdrop: 'static',
+      size: 'lg',
+    });
+    document.getElementById('fid')?.setAttribute('value', farmer.farmerid);
+    document.getElementById('fname')?.setAttribute('value', farmer.farmername);
+    document.getElementById('phno')?.setAttribute('value', farmer.phoneno);
+    document
+      .getElementById('fmailid')
+      ?.setAttribute('value', farmer.farmermailid);
+    document
+      .getElementById('flocation')
+      ?.setAttribute('value', farmer.farmerlocation);
   }
 }

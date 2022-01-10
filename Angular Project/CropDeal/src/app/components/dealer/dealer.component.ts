@@ -4,9 +4,9 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 export class Dealer {
   constructor(
-    public dealerid: number,
+    public dealerid: any,
     public dealername: string,
-    public phoneno: number,
+    public phoneno: any,
     public dealermailid: string
   ) {}
 }
@@ -60,5 +60,18 @@ export class DealerComponent implements OnInit {
       this.ngOnInit(); //reload the table
     });
     this.modalService.dismissAll(); //dismiss the modal
+  }
+  openDetails(targetModal: any, dealer: Dealer) {
+    this.modalService.open(targetModal, {
+      centered: true,
+      backdrop: 'static',
+      size: 'lg',
+    });
+    document.getElementById('did')?.setAttribute('value', dealer.dealerid);
+    document.getElementById('dname')?.setAttribute('value', dealer.dealername);
+    document.getElementById('phno')?.setAttribute('value', dealer.phoneno);
+    document
+      .getElementById('dmailid')
+      ?.setAttribute('value', dealer.dealermailid);
   }
 }

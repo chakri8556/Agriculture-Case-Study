@@ -4,10 +4,10 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 export class Crop {
   constructor(
-    public cropid: number,
+    public cropid: any,
     public cropname: string,
-    public cropprice: number,
-    public quantity: number
+    public cropprice: any,
+    public quantity: any
   ) {}
 }
 @Component({
@@ -58,5 +58,16 @@ export class CropComponent implements OnInit {
       this.ngOnInit(); //reload the table
     });
     this.modalService.dismissAll(); //dismiss the modal
+  }
+  openDetails(targetModal: any, crop: Crop) {
+    this.modalService.open(targetModal, {
+      centered: true,
+      backdrop: 'static',
+      size: 'lg',
+    });
+    document.getElementById('cid')?.setAttribute('value', crop.cropid);
+    document.getElementById('cname')?.setAttribute('value', crop.cropname);
+    document.getElementById('cprice')?.setAttribute('value', crop.cropprice);
+    document.getElementById('quant')?.setAttribute('value', crop.quantity);
   }
 }
