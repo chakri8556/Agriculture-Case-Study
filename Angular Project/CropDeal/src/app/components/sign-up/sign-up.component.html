@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="login-content">
+    <div class="body">
+      <h2 class="text-center">SignUp Form</h2>
+      <form #signup="ngForm">
+        <img src="../../assets/pics/Avatar.png" />
+        <!--Name Element-->
+        <input
+          type="name"
+          class="form-control"
+          name="sname"
+          #sname="ngModel"
+          [ngModel]
+          placeholder="Name"
+          required
+        /><br />
+        <div class="alert alert-danger" *ngIf="sname.invalid && sname.touched">
+          Please Enter Your Name
+        </div>
+
+        <!--Email Element-->
+        <input
+          type="email"
+          class="form-control"
+          email
+          name="ename"
+          #ename="ngModel"
+          [ngModel]
+          placeholder="Email"
+          required
+        /><br />
+        <div
+          class="alert alert-danger"
+          *ngIf="ename.errors?.['required'] && ename.touched"
+        >
+          Email is Required!
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="ename.errors?.['email'] && ename.touched"
+        >
+          Please Enter Email In Correct Format
+        </div>
+
+        <!--password element-->
+        <input
+          type="password"
+          class="form-control"
+          minlength="6"
+          name="spass"
+          #spass="ngModel"
+          [ngModel]
+          placeholder="Password"
+          required
+        /><br />
+        <div
+          class="alert alert-danger"
+          *ngIf="spass.errors?.['required'] && spass.touched"
+        >
+          Please Enter Your Password
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="spass.errors?.['minlength'] && spass.touched"
+        >
+          Password Should be Atleast 6 Letters
+        </div>
+
+        <!--conf password Element-->
+        <input
+          type="password"
+          class="form-control"
+          name="scpass"
+          #scpass="ngModel"
+          [ngModel]
+          placeholder="Conf Password"
+          required
+        /><br />
+        <div
+          class="alert alert-danger"
+          *ngIf="scpass.errors?.['required'] && scpass.touched"
+        >
+          Please Confirm Your Password
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="spass.value !== scpass.value && scpass.touched"
+        >
+          Password and Confirm Password Are Not Same
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="!signup.valid"
+          (click)="dataCapture(signup)"
+        >
+          Submit
+        </button>
+        <button type="button" class="btn btn-info" (click)="signup.resetForm()">
+          Reset
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

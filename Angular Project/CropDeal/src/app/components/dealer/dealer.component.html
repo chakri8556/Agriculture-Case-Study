@@ -1,0 +1,47 @@
+<div class="border">
+  <button class="btn btn-md btn-outline-primary">
+    <i class="fa fa-user"></i>New Dealer
+  </button>
+</div>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Dealerid</th>
+        <th>Dealername</th>
+        <th>Phoneno</th>
+        <th>Dealermailid</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dealer of dealers">
+        <td>
+          <span>{{ dealer.dealerid }}</span>
+        </td>
+        <td>
+          <span>{{ dealer.dealername }}</span>
+        </td>
+        <td>
+          <span>{{ dealer.phoneno }}</span>
+        </td>
+        <td>
+          <span>{{ dealer.dealermailid }}</span>
+        </td>
+        <td>
+          <button class="btn btn-sm btn-info">
+            <i class="fa fa-search"></i>Details
+          </button>
+          <button class="btn btn-sm btn-warning">
+            <i class="fa fa-edit"></i>Edit
+          </button>
+          <button class="btn btn-sm btn-danger">
+            <i class="fa fa-remove"></i>Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+}

@@ -9,6 +9,7 @@ import user_Dealer.repository.DealerRepository;
 import java.util.List;
 
 @EnableEurekaClient
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value= "/dealer")
 public class DealerResource {

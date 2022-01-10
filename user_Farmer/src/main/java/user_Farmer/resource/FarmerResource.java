@@ -11,6 +11,7 @@ import user_Farmer.repository.FarmerRepository;
 import java.util.List;
 
 @EnableEurekaClient
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/farmer")
 public class FarmerResource {
@@ -40,6 +41,7 @@ public class FarmerResource {
     public Farmer getFarmer1(@PathVariable int byid) {
         return farmerRepository.findById(byid).get();
     }
+
     @GetMapping(value = "/byname/{farmername}")
     public List<Farmer> getFarmer(@PathVariable String farmername){
         return farmerRepository.findByFarmername(farmername);

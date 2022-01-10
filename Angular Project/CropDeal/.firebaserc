@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cropdeal-2c6df": {
+      "hosting": {
+        "CropDeal": [
+          "cropdeal-2c6df"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cropdeal-2c6df"
+  }
+}

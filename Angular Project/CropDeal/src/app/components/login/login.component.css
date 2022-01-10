@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  height: 78vh;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 78vh;
+  display: flex;
+  justify-content: flex-end;
+  grid-template-columns: repeat(7, 9fr);
+  grid-gap: 20rem;
+  padding: 1rem 1rem;
+}
+.login-box {
+  max-width: 750px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  right: 10;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: flex-end;
+  background-color: snow;
+  box-shadow: 0px 0px 9px 0px #00f535;
+}
+.left {
+  background: url("C:\Users\chakri\Desktop\Agriculture Case Study\Angular Project\CropDeal\src\assets\pics\Avatar For Login.png")
+    no-repeat center;
+  background-size: cover;
+  height: 100%;
+}
+.right {
+  padding: 55px 40px;
+}
+h2 {
+  position: relative;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 130px;
+  border-radius: 2px;
+  background-color: #00f535;
+}
+.btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #00f535;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+h1 {
+  color: blue;
+}
+
+input.ng-invalid {
+  border-left: 5px solid red;
+}
+
+input.ng-valid {
+  border-left: 5px solid green;
+}
+.error {
+  color: red;
+}

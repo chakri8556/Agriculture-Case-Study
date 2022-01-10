@@ -6,10 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
-import user_Farmer.model.Farmer;
 
-import java.util.List;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class UserFarmerApplication{
