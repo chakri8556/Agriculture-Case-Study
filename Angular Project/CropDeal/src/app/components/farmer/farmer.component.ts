@@ -20,7 +20,7 @@ export class Farmer {
 export class FarmerComponent implements OnInit {
   closeResult!: String;
   editForm!: FormGroup;
-  deleteId: any;
+  deleteID!: number;
   constructor(
     private http: HttpClient,
     private modalService: NgbModal,
@@ -108,7 +108,7 @@ export class FarmerComponent implements OnInit {
   }
   onSave() {
     const editURL =
-      'http://localhost:9001/farmer/' + '/edit' + this.editForm.value.id;
+      'http://localhost:9001/farmer/update/' + this.editForm.value.id;
     console.log(this.editForm.value);
     this.http.put(editURL, this.editForm.value).subscribe((results) => {
       this.ngOnInit();
@@ -116,18 +116,18 @@ export class FarmerComponent implements OnInit {
     });
   }
   openDelete(targetModal: any, farmer: Farmer) {
-    const deleteId = farmer.farmerid;
+    this.deleteID = farmer.farmerid;
     this.modalService.open(targetModal, {
       backdrop: 'static',
       size: 'lg',
     });
   }
   onDelete() {
-    const deleteURL =
-      'http://localhost:9001/farmer/' + '/delete' + this.deleteId;
+    console.log('not working');
+    const deleteURL = 'http://localhost:9001/farmer/delete/' + this.deleteID;
     this.http.delete(deleteURL).subscribe((results) => {
       this.ngOnInit();
-      this.modalService.dismissAll();
     });
+    this.modalService.dismissAll();
   }
 }

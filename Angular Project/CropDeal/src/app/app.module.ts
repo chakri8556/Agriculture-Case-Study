@@ -3,7 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreModule,
+} from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -52,6 +56,8 @@ import { SDealerComponent } from './sdealer/sdealer.component';
       appId: '1:311941162182:web:0c3c99d6fa19984a5f23c7',
       measurementId: 'G-BQKKGC14JV',
     }),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [AngularFirestore],
 

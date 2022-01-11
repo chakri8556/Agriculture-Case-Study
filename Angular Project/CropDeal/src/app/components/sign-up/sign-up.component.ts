@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  constructor() {}
+  constructor(private as: AuthenticationService) {}
 
   ngOnInit(): void {}
 
-  dataCapture(form: any) {
-    console.log(form);
+  dataCapture(form: { value: { semail: any; pass: any } }) {
+    console.log(form.value.semail);
+    console.log(form.value.pass);
   }
 }
