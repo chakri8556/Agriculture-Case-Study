@@ -24,35 +24,35 @@ public class CropResource {
         return "Hello From Crop MicroService";
 
     }
-
+    //Adding crop
     @PostMapping("/addcrop")
     public String saveCrop(@RequestBody Crop crop) {
         cropRepository.save(crop);
         return "Added Crop with id:" + crop.getCropid();
     }
-
+    //Finding all crops
     @GetMapping("/findAllcrop")
     public List<Crop> getCrop() {
         return cropRepository.findAll();
     }
-
+    //Finding crop using id
     @GetMapping("/findcrop/{byid}")
     public Crop getCrop(@PathVariable int byid) {
         return cropRepository.findById(byid).get();
     }
-
+    //Deleting available crops
     @DeleteMapping("/delete/{cropid}")
     public String deleteBook(@PathVariable int cropid) {
         cropRepository.deleteById(cropid);
         return "Book deleted with id : " + cropid;
     }
-
+    //Updating crop using id
     @PutMapping("/update/{id}")
     public String getcrop1(@RequestBody Crop crop) {
         cropRepository.save(crop);
         return "Crop updated with id:" + crop.getCropid();
     }
-
+    //editing particular crop
     @PutMapping("/edit/{id}")
     public String getcrop2(@RequestBody Crop crop) {
         cropRepository.save(crop);

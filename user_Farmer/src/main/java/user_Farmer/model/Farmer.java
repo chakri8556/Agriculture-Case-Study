@@ -4,25 +4,25 @@ package user_Farmer.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "FarmerDetails")
+@Document(collection = "FarmerDetails") //storing data into that particular collection of database.
 public class Farmer {
-    @Id
+    @Id //primary key
     private int farmerid;
-    private String farmername;
+    private String farmername; //attributes
     private long phoneno;
     private String farmermailid;
     private String farmerlocation;
-    public Farmer(){ }
+    public Farmer(){ } //Empty Constructor
 
 
     public Farmer(int farmerid, String farmername, long phoneno, String farmermailid, String farmerlocation) {
         this.farmerid = farmerid;
-        this.farmername = farmername;
+        this.farmername = farmername; //constructors
         this.phoneno = phoneno;
         this.farmermailid = farmermailid;
         this.farmerlocation = farmerlocation;
     }
-
+     // getters&setters for updating and reading values
     public int getFarmerid() {
         return farmerid;
     }
@@ -64,7 +64,7 @@ public class Farmer {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //For getting string representation of an object
         return "Farmer{" +
                 "farmerid=" + farmerid +
                 ", farmername='" + farmername + '\'' +

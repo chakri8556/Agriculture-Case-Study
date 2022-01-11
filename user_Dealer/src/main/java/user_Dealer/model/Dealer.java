@@ -3,15 +3,17 @@ package user_Dealer.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "DealerDetails")
+@Document(collection = "DealerDetails") //storing into that particular collection of database
 public class Dealer {
 
-@Id
+@Id //primary key
         private int dealerid;
-        private String dealername;
+        private String dealername;   // attributes of dealer class
         private long phoneno;
         private String dealermailid;
-    public Dealer() { }
+    public Dealer() { } //empty constructor
+
+    //for updating and reading values we use getters and setters
     public int getDealerid() {
         return dealerid;
     }
@@ -51,7 +53,7 @@ public class Dealer {
         }
 
     @Override
-    public String toString() {
+    public String toString() { //to get string representation of an object
         return "Dealer{" +
                 "dealerid=" + dealerid +
                 ", dealername='" + dealername + '\'' +

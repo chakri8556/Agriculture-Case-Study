@@ -1,0 +1,27 @@
+.border {
+  padding: 10px;
+}
+.btn {
+  margin-right: 10px;
+}
+.fa {
+  margin-right: 10px;
+}
+
+/* table for edit detelte */
+
+table .btn {
+  margin: 2px;
+}
+
+a {
+  text-align: center;
+}
+
+body > app-root > app-header > app-farmer > a {
+  margin-right: 50px;
+}
+
+body > app-root > app-header > app-farmer > div.border {
+  background-color: cornsilk;
+}

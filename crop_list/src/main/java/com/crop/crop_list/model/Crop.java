@@ -3,9 +3,9 @@ package com.crop.crop_list.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "CropDetails")
+@Document(collection = "CropDetails") //storing data into particular collection of an database.
 public class Crop {
-    @Id
+    @Id //primary key
     private int cropid;
     private String cropname;
     private double cropprice;
